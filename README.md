@@ -1,6 +1,6 @@
 # Hearthstone-Deck-Builder
 
-HSDeckBuilder is a [Hearthstone](http://www.playhearthstone.com/) deck list importer for Mac OS X 10.8+.
+HSDeckBuilder is a [Hearthstone](http://www.playhearthstone.com/) deck list importer for Mac OS X 10.9+.
 It reads deck list from popular web sites, saves it, and can export it directly into the game.
 
 Currently supported websites:
@@ -9,7 +9,8 @@ Currently supported websites:
 
 If you have any suggestions or issues, please leave in issues section. :)
 
-[![Demo video](/README/youtube-thumb.png)](http://www.youtube.com/watch?v=i_oS_82nofM)
+### Demo Video
+[![Demo Video](/README/youtube-thumb.png)](http://www.youtube.com/watch?v=i_oS_82nofM)
 
 ![Image](/README/ss1.png)
 
