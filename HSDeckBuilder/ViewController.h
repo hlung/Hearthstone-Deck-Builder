@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Deck.h"
 
 @interface ViewController : NSViewController
 
+@property (strong, nonatomic) Deck *selectedDeck;
 
 @end
 

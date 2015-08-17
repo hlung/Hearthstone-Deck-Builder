@@ -7,22 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "NetEaseCardBuilderImporter.h"
+
 #import "TKWindowUtils.h"
 #import "RLMArray+TKHelper.h"
-
-#import "RegExCategories.h"
+#import "ImportFromWebVC.h"
 
 @interface ViewController ()
-@property (weak) IBOutlet NSProgressIndicator *indicator;
-@property (weak) IBOutlet NSTextField *statusLabel;
-@property (weak) IBOutlet NSTextField *urlTextField;
+@property (weak) IBOutlet NSButton *importBtn;
 @property (weak) IBOutlet NSButton *exportDeckBtn;
-
 @property (weak) IBOutlet NSArrayController *cardArrayController;
 @property (weak) IBOutlet NSTableView *cardTable;
-
-@property (strong, nonatomic) Deck *selectedDeck;
+@property (weak) IBOutlet NSTextField *tableTitleLabel;
 @property (assign, nonatomic) float delaySpeedAdjust;
 @end
 
@@ -33,26 +28,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.delaySpeedAdjust = 2.0f;
+    self.delaySpeedAdjust = 1.0f;
+    
+    // OMG!!! SETTING BACKGROUND COLOR IS SO DAMN HARD!!!
+//    [self.view setWantsLayer:YES];
+//    [self.view.layer setBackgroundColor:CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.4)];
+    
+#if DEBUG
+    // clear all data
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm deleteAllObjects];
+    }];
+#endif
     
     Deck *loadedDeck = [self loadDefaultDeck];
+//    Deck *loadedDeck = nil;
 //    NSLog(@"loadedDeck: %@", loadedDeck);
-    
-    if (loadedDeck) {
-        self.urlTextField.stringValue = loadedDeck.generatedFromURL;
-        self.statusLabel.stringValue = @"Previous deck loaded";
-        self.selectedDeck = loadedDeck;
-    }
+
+    self.selectedDeck = loadedDeck;
 }
 
 - (void)setSelectedDeck:(Deck *)selectedDeck {
     _selectedDeck = selectedDeck;
     
-    // setContent requires an array
-//    NSMutableArray *m = [NSMutableArray array];
-//    for (Card *c in selectedDeck.cards) {
-//        [m addObject:c];
-//    }
+    NSString *yourDeckStr = @"";
+    if (selectedDeck.cardCount > 0) {
+        yourDeckStr = [NSString stringWithFormat:@"Your deck: (%lu cards)", (unsigned long)selectedDeck.cardCount];
+        [self saveDefaultDeck:selectedDeck];
+    }
+    self.tableTitleLabel.stringValue = yourDeckStr;
     
     [self.cardArrayController setContent:selectedDeck.cards.allObjects];
 }
@@ -68,43 +73,10 @@
     // Update the view, if already loaded.
 }
 
-
-- (IBAction)onDownload:(id)sender {
-    
-//    NSString *urlString = @"http://www.hearthpwn.com/decks/224656-senfglas-1-legend-grim-patron-warrior";
-    
-    NSString *urlString = self.urlTextField.stringValue;
-    //NSURL *url = [NSURL URLWithString:urlString];
-    
-    // hearthpwn.com
-    if ([urlString isMatch:RX(@"hearthpwn.com/decks/")]) {
-        
-        NSString *dockerId = [urlString firstMatch:RX(@"(\\d+)")]; // get first number
-
-        [self.indicator startAnimation:nil];
-        self.statusLabel.stringValue = @"Downloading...";
-        
-        [NetEaseCardBuilderImporter
-         importHearthPwnDockerWithId:dockerId //@"224656"
-         success:^(Deck *deck) {
-             
-             deck.generatedFromURL = urlString;
-             
-             [self.indicator stopAnimation:nil];
-             NSString *str = [NSString stringWithFormat:@"Download Completed"]; // [NSString stringWithFormat:@"Download Completed, got %ld cards", (long)[deck cardCount]];
-             self.statusLabel.stringValue = str;
-             
-             self.selectedDeck = deck;
-             [self saveDefaultDeck:deck];
-             
-         } fail:^(NSString *string) {
-             [self.indicator stopAnimation:nil];
-             self.statusLabel.stringValue = @"Download Failed";
-             
-         }];
-    }
-    else {
-        self.statusLabel.stringValue = @"URL not supported :(";
+- (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"import"]) {
+        ImportFromWebVC *vc = segue.destinationController;
+        vc.mainVC = self;
     }
 }
 
@@ -119,10 +91,6 @@
 
 - (Deck*)loadDefaultDeck {
     RLMRealm *realm = [RLMRealm defaultRealm];
-//    NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-//    NSString *customRealmPath = [documentsDirectory stringByAppendingPathComponent:@"example.realm"];
-//    RLMRealm *realm = [RLMRealm realmWithPath:customRealmPath];
-    
     RLMResults *d = [Deck allObjectsInRealm:realm];
     return [d firstObject];
 //    return nil;
@@ -130,7 +98,7 @@
 
 - (IBAction)onExportToHearthstone:(id)sender {
     
-    // Note: run `[[NSWorkspace sharedWorkspace] runningApplications]` to see all running app bundle IDs
+    // Note: use `[[NSWorkspace sharedWorkspace] runningApplications]` to see app bundle IDs
     NSString *hsAppBundleID = @"unity.Blizzard Entertainment.Hearthstone";
 //    NSString *hsAppBundleID = @"com.apple.TextEdit";
     //NSString *hsAppBundleID = @"com.sublimetext.2";
@@ -138,7 +106,7 @@
     // try to bring Hearthstone window to front
     NSRunningApplication *hsApp = [[NSRunningApplication runningApplicationsWithBundleIdentifier:hsAppBundleID] firstObject];
     if ([hsApp activateWithOptions:NSApplicationActivateAllWindows] == false) {
-        self.statusLabel.stringValue = @"Hearthstone is not running!";
+        [self showAlert:@"Hearthstone is not running!"];
         return;
     }
     
@@ -149,7 +117,7 @@
     NSLog(@"hsWindowRect %@", NSStringFromRect(hsWindowRect));
     
     if (hsWindowRect.size.height == 0) {
-        self.statusLabel.stringValue = @"Hearthstone is not running!";
+        [self showAlert:@"Hearthstone window not found!"];
         return;
     }
     
@@ -180,6 +148,20 @@
     NSLog(@"DONE!");
 }
 
+- (IBAction)onDonate:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=thongchaikol%40gmail%2ecom&lc=US&item_name=HSDeckBuilder"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+#pragma mark - utilities
+
+- (void)showAlert:(NSString*)string {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:string];
+    [alert beginSheetModalForWindow:[NSApplication sharedApplication].mainWindow
+                  completionHandler:nil];
+}
+
 - (void)delay:(float)sec {
     usleep(sec * 1000000 * self.delaySpeedAdjust);
 }
@@ -203,8 +185,6 @@ const NSSize HS_WINDOW_W_H_RATIO = {1024, 768};
                        gameRect.origin.y + gameRect.size.height * 0.3);
 }
 
-#pragma mark - utilities
-
 NSSize NSSizeAspectFit(NSSize aspectRatio, NSSize boundingSize) {
     float mW = boundingSize.width / aspectRatio.width;
     float mH = boundingSize.height / aspectRatio.height;
@@ -218,6 +198,5 @@ NSSize NSSizeAspectFit(NSSize aspectRatio, NSSize boundingSize) {
 //- (CGPoint)mousePointFromScreenPoint:(CGPoint)sp {
 //    return CGPointMake(sp.x, theScreen.frame.size.height - sp.y);
 //}
-
 
 @end
