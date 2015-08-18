@@ -1,11 +1,7 @@
 # Hearthstone-Deck-Builder
 
 HSDeckBuilder is a [Hearthstone](http://www.playhearthstone.com/) deck list importer for Mac OS X 10.9+.
-It reads deck list from popular web sites, saves it, and can export it directly into the game.
-
-Currently supported websites:
-- http://www.hearthpwn.com/
-- http://www.icy-veins.com/
+It can import deck from websites straight into the game.
 
 If you have any suggestions or issues, please leave in issues section. :)
 
@@ -26,16 +22,19 @@ If you have any suggestions or issues, please leave in issues section. :)
 - Copy the web page url
 - Click "Import from Web"
 - Paste the url, click import
+- Currently supported websites:
+    - http://www.hearthpwn.com/
+    - http://www.icy-veins.com/
 
 ### Export deck to Hearthstone
 - Make sure you have imported a deck first
-- Open the game 
-- Go to "My Collection" 
-- Click "New Deck" 
-- Choose same Hero as the deck you want to export 
-- Come back to HSDeckBuilder 
-- Click "Export to Hearthstone" button 
-- Wait until done (don't move the mouse!) :)
+- Open the game
+- Go to "My Collection"
+- Click "New Deck"
+- Choose same Hero as the deck you want to export
+- Come back to HSDeckBuilder
+- Click "Export to Hearthstone" button
+- Wait until done, don't move the mouse!
 
 ## Special thanks
 - [Epix37/Hearthstone-Deck-Tracker](https://github.com/Epix37/Hearthstone-Deck-Tracker) - for the inspiration. One of its functionality is the same as this app, but unfortunately, I use _Mac_, not _Windows_.

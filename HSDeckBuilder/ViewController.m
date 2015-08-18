@@ -96,6 +96,8 @@
 //    return nil;
 }
 
+#pragma mark - buttons
+
 - (IBAction)onExportToHearthstone:(id)sender {
     
     // Note: use `[[NSWorkspace sharedWorkspace] runningApplications]` to see app bundle IDs
@@ -150,6 +152,11 @@
 
 - (IBAction)onDonate:(id)sender {
     NSURL *url = [NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=thongchaikol%40gmail%2ecom&lc=US&item_name=HSDeckBuilder"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}
+
+- (IBAction)onHelpBtn:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"https://github.com/hlung/Hearthstone-Deck-Builder/blob/master/README.md#hearthstone-deck-builder"];
     [[NSWorkspace sharedWorkspace] openURL:url];
 }
 

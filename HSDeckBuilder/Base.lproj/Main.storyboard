@@ -696,7 +696,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-346" y="385"/>
+            <point key="canvasLocation" x="-218" y="554"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -758,7 +758,7 @@
                                                         </binding>
                                                     </connections>
                                                 </tableColumn>
-                                                <tableColumn editable="NO" width="332" minWidth="150" maxWidth="400" id="OVr-Mf-1Km">
+                                                <tableColumn editable="NO" width="332.28449446337714" minWidth="150" maxWidth="400" id="OVr-Mf-1Km">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Name">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -779,7 +779,7 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="moi-wt-a98">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.26382674978913201" horizontal="YES" id="moi-wt-a98">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -817,7 +817,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="PEj-Wl-4Iu" kind="show" id="7Ob-Ew-QQY"/>
+                                    <action selector="onHelpBtn:" target="XfG-lQ-9wD" id="NV8-X6-Q16"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8TN-EZ-mD0">
@@ -850,7 +850,7 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtm-k4-miQ">
-                                <rect key="frame" x="73" y="257" width="64" height="69"/>
+                                <rect key="frame" x="73" y="261" width="64" height="69"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" image="arrow-1" id="sSj-79-RYM"/>
                                 <connections>
                                     <binding destination="XfG-lQ-9wD" name="hidden" keyPath="self.selectedDeck" id="Qgl-CX-Y2R">
@@ -895,31 +895,7 @@
                     </declaredKeys>
                 </arrayController>
             </objects>
-            <point key="canvasLocation" x="182" y="782"/>
-        </scene>
-        <!--Help-->
-        <scene sceneID="Efa-AR-zti">
-            <objects>
-                <viewController title="Help" showSeguePresentationStyle="single" id="PEj-Wl-4Iu" sceneMemberID="viewController">
-                    <view key="view" id="Etw-l5-mG5">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="362"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZiQ-dt-WnN">
-                                <rect key="frame" x="6" y="41" width="369" height="301"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="oPh-ir-OLk">
-                                    <font key="font" metaFont="system"/>
-                                    <mutableString key="title">How to use "Export to Hearthstone" - Open the game - Go to "My Collection" - Click "New Deck" - Choose same Hero as the deck you want to export - Come back to HSDeckBuilder - Click "Export to Hearthstone" button - Wait until done :)  วิธีใช้ "Export to Hearthstone" - เปิดเกม - ไปหน้า "My Collection" - กด "New Deck" - เลือก Hero ตัวเดียวกับ Deck ที่เราต้องการ - กลับมาที่แอพ HSDeckBuilder - กดปุ่ม "Export to Hearthstone" - นั่งรอ :)</mutableString>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="hUG-KM-f6R" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="637" y="1054"/>
+            <point key="canvasLocation" x="182" y="757"/>
         </scene>
         <!--Import from Web-->
         <scene sceneID="SrE-Hc-COs">
@@ -931,7 +907,7 @@
                         <subviews>
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-7e-chs">
                                 <rect key="frame" x="11" y="58" width="344" height="80"/>
-                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. http://www.hearthpwn.com/decks/224656-senfglas-1-legend-grim-patron-warrior)" drawsBackground="YES" id="Rsi-nZ-g5j">
+                                <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. http://www.hearthpwn.com/decks/224656-senfglas-1-legend-grim-patron-warrior" drawsBackground="YES" id="Rsi-nZ-g5j">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1010,7 +986,7 @@ Gw
                 </viewController>
                 <customObject id="Ldy-6g-ff8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="671.5"/>
+            <point key="canvasLocation" x="619" y="756.5"/>
         </scene>
     </scenes>
     <resources>
