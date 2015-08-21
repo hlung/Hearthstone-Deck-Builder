@@ -24,6 +24,22 @@
              };
 }
 
++ (Deck*)loadDefaultDeck {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults *d = [Deck allObjectsInRealm:realm];
+    return [d firstObject];
+    //    return nil;
+}
+
+- (void)saveAsDefaultDeck:(Deck*)deck {
+    // Persist data
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm deleteAllObjects];
+        [realm addObject:deck];
+    }];
+}
+
 //- (NSString*)description {
 //    return [NSString stringWithFormat:@"Deck with %lu cards", (unsigned long)self.cardCount];
 //}

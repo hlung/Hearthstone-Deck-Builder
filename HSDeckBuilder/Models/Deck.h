@@ -15,6 +15,7 @@
 @property NSString *generatedFromURL;
 @property RLMArray<Card> *cards;
 - (NSUInteger)cardCount;
++ (Deck*)loadDefaultDeck;
+- (void)saveAsDefaultDeck;
 //- (NSString*)description;
 @end
-//RLM_ARRAY_TYPE(Deck)

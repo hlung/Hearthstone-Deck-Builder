@@ -26,6 +26,7 @@
 		D0C615371B8787E300240C7A /* SGKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C615301B8787E300240C7A /* SGKeyCodes.plist */; };
 		D0C615381B8787E300240C7A /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0C615391B8787E300240C7A /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615341B8787E300240C7A /* SGKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0C6153D1B8799C200240C7A /* ExportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6153B1B8799C200240C7A /* ExportVC.m */; };
 		D164A98F9F01747111AFEDB3 /* libPods-HSDeckBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,8 @@
 		D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCodeTranslator.m; sourceTree = "<group>"; };
 		D0C615331B8787E300240C7A /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
 		D0C615341B8787E300240C7A /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
+		D0C6153A1B8799C200240C7A /* ExportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportVC.h; sourceTree = "<group>"; };
+		D0C6153B1B8799C200240C7A /* ExportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportVC.m; sourceTree = "<group>"; };
 		DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -156,6 +159,8 @@
 				D04C332D1B7EEA9F00727E60 /* ViewController.m */,
 				D01F95531B8080AE00AAD39C /* ImportFromWebVC.h */,
 				D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */,
+				D0C6153A1B8799C200240C7A /* ExportVC.h */,
+				D0C6153B1B8799C200240C7A /* ExportVC.m */,
 				D04C332F1B7EEA9F00727E60 /* Images.xcassets */,
 				D04C33311B7EEA9F00727E60 /* Main.storyboard */,
 				D0231EDB1B7FB5770050BEF3 /* Categories */,
@@ -403,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C6153D1B8799C200240C7A /* ExportVC.m in Sources */,
 				D04C332E1B7EEA9F00727E60 /* ViewController.m in Sources */,
 				D0C10C301B7F00E500C2DBE2 /* Card.m in Sources */,
 				D04C332B1B7EEA9F00727E60 /* main.m in Sources */,

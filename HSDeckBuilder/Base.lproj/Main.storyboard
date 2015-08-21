@@ -833,6 +833,7 @@
                                             <string key="NSValueTransformerName">NSIsNotNil</string>
                                         </dictionary>
                                     </binding>
+                                    <segue destination="EVE-Ni-6Ba" kind="sheet" identifier="export" id="LKh-bx-Rzj"/>
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="eyz-rK-vHn">
@@ -860,18 +861,13 @@
                                     </binding>
                                 </connections>
                             </imageView>
-                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-P0-qZa">
-                                <rect key="frame" x="173" y="421" width="16" height="16"/>
-                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8TN-EZ-mD0" secondAttribute="trailing" constant="5" id="0x6-zC-ycd"/>
                             <constraint firstAttribute="trailing" secondItem="ob2-XA-9oF" secondAttribute="trailing" constant="80" id="1AM-ib-gpd"/>
                             <constraint firstItem="ob2-XA-9oF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="4IM-Da-Ey8"/>
                             <constraint firstAttribute="trailing" secondItem="NfP-QD-Qkh" secondAttribute="trailing" id="7x6-wi-OqK"/>
-                            <constraint firstAttribute="trailing" secondItem="G6y-P0-qZa" secondAttribute="trailing" constant="171" id="AH3-gH-fad"/>
                             <constraint firstItem="ob2-XA-9oF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="I6J-6N-TCL"/>
-                            <constraint firstItem="G6y-P0-qZa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="13" id="PRu-Rh-RMw"/>
                             <constraint firstItem="Onh-GZ-J3x" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Q7p-fK-4kp"/>
                             <constraint firstItem="eyz-rK-vHn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="SeE-Nt-X3l"/>
                             <constraint firstAttribute="trailing" secondItem="eyz-rK-vHn" secondAttribute="trailing" constant="30" id="URy-Lv-r18"/>
@@ -888,7 +884,6 @@
                         <outlet property="cardArrayController" destination="mAK-x9-bwt" id="MyG-Hf-tSj"/>
                         <outlet property="cardTable" destination="KGA-jY-Ur1" id="nb9-S0-SMN"/>
                         <outlet property="exportDeckBtn" destination="8TN-EZ-mD0" id="97a-sC-sJr"/>
-                        <outlet property="exportIndicator" destination="G6y-P0-qZa" id="06U-Y9-42f"/>
                         <outlet property="importBtn" destination="Onh-GZ-J3x" id="YMI-pp-3B0"/>
                         <outlet property="tableTitleLabel" destination="ob2-XA-9oF" id="QKd-rE-taj"/>
                     </connections>
@@ -903,10 +898,10 @@
             </objects>
             <point key="canvasLocation" x="182" y="802"/>
         </scene>
-        <!--Import from Web-->
+        <!--Import-->
         <scene sceneID="SrE-Hc-COs">
             <objects>
-                <viewController title="Import from Web" showSeguePresentationStyle="single" id="kPf-M7-dDp" customClass="ImportFromWebVC" sceneMemberID="viewController">
+                <viewController title="Import" showSeguePresentationStyle="single" id="kPf-M7-dDp" customClass="ImportFromWebVC" sceneMemberID="viewController">
                     <view key="view" id="91b-V9-p6h">
                         <rect key="frame" x="0.0" y="0.0" width="366" height="209"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -992,7 +987,55 @@ Gw
                 </viewController>
                 <customObject id="Ldy-6g-ff8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="756.5"/>
+            <point key="canvasLocation" x="704" y="703.5"/>
+        </scene>
+        <!--Export-->
+        <scene sceneID="6Mq-sz-fY3">
+            <objects>
+                <viewController title="Export" showSeguePresentationStyle="single" id="EVE-Ni-6Ba" customClass="ExportVC" sceneMemberID="viewController">
+                    <view key="view" id="4jy-ye-L8j">
+                        <rect key="frame" x="0.0" y="0.0" width="278" height="92"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0w5-GF-AvO">
+                                <rect key="frame" x="28" y="52" width="245" height="18"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Exporting... (press ESC to stop)" id="xnw-pa-fet">
+                                    <font key="font" metaFont="system" size="15"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="leh-5g-n84">
+                                <rect key="frame" x="11" y="53" width="16" height="16"/>
+                            </progressIndicator>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAi-WK-UXH">
+                                <rect key="frame" x="9" y="21" width="264" height="24"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="0/30 cards" id="Ld5-fA-PJ7">
+                                    <font key="font" metaFont="system" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fAi-WK-UXH" firstAttribute="top" secondItem="0w5-GF-AvO" secondAttribute="bottom" constant="7" id="89T-3S-dc3"/>
+                            <constraint firstItem="0w5-GF-AvO" firstAttribute="top" secondItem="4jy-ye-L8j" secondAttribute="top" constant="22" id="EYF-Za-Jqv"/>
+                            <constraint firstItem="leh-5g-n84" firstAttribute="leading" secondItem="4jy-ye-L8j" secondAttribute="leading" constant="11" id="L7g-X5-uQL"/>
+                            <constraint firstAttribute="trailing" secondItem="0w5-GF-AvO" secondAttribute="trailing" constant="7" id="Nqy-x4-IU0"/>
+                            <constraint firstItem="0w5-GF-AvO" firstAttribute="leading" secondItem="4jy-ye-L8j" secondAttribute="leading" constant="30" id="P7J-sa-PXL"/>
+                            <constraint firstItem="fAi-WK-UXH" firstAttribute="leading" secondItem="4jy-ye-L8j" secondAttribute="leading" constant="11" id="i7P-si-6kz"/>
+                            <constraint firstAttribute="trailing" secondItem="fAi-WK-UXH" secondAttribute="trailing" constant="7" id="v2y-yG-CIH"/>
+                            <constraint firstItem="leh-5g-n84" firstAttribute="top" secondItem="4jy-ye-L8j" secondAttribute="top" constant="23" id="zlR-ak-50u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="leh-5g-n84" id="fDI-Sy-TWG"/>
+                        <outlet property="subtitleLabel" destination="fAi-WK-UXH" id="I1Y-AE-kLO"/>
+                    </connections>
+                </viewController>
+                <customObject id="fHj-hM-FhY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660" y="924"/>
         </scene>
     </scenes>
     <resources>
