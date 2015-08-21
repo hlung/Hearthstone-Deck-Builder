@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
@@ -705,7 +705,7 @@
                     <window key="window" title="Hearthstone Deck Builder" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="160" y="417" width="360" height="360"/>
+                        <rect key="contentRect" x="160" y="326" width="360" height="451"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="360" height="360"/>
                     </window>
@@ -715,19 +715,19 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="281.5"/>
+            <point key="canvasLocation" x="182" y="235.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-QD-Qkh">
-                                <rect key="frame" x="0.0" y="-70" width="360" height="370"/>
-                                <clipView key="contentView" misplaced="YES" id="QFD-Si-AfF">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-QD-Qkh">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="390"/>
+                                <clipView key="contentView" id="QFD-Si-AfF">
                                     <rect key="frame" x="1" y="17" width="238" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -779,7 +779,7 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.26382674978913201" horizontal="YES" id="moi-wt-a98">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.26382674978913201" horizontal="YES" id="moi-wt-a98">
                                     <rect key="frame" x="1" y="119" width="223" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -793,7 +793,7 @@
                                 </tableHeaderView>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Onh-GZ-J3x">
-                                <rect key="frame" x="0.0" y="322" width="144" height="32"/>
+                                <rect key="frame" x="0.0" y="412" width="144" height="32"/>
                                 <buttonCell key="cell" type="push" title="Import from Web" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tl8-9R-fbp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -803,7 +803,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="ob2-XA-9oF">
-                                <rect key="frame" x="6" y="305" width="276" height="17"/>
+                                <rect key="frame" x="6" y="395" width="276" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="tableTitleLabel" id="SfF-gv-sUh">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -811,7 +811,7 @@
                                 </textFieldCell>
                             </textField>
                             <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OF3-0E-rSb">
-                                <rect key="frame" x="332" y="300" width="25" height="25"/>
+                                <rect key="frame" x="332" y="390" width="25" height="25"/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Wja-GD-YmN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -821,8 +821,8 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8TN-EZ-mD0">
-                                <rect key="frame" x="181" y="322" width="180" height="32"/>
-                                <buttonCell key="cell" type="push" title="Export to Hearthstone " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hpa-RA-ik2">
+                                <rect key="frame" x="185" y="412" width="176" height="32"/>
+                                <buttonCell key="cell" type="push" title="Export to Hearthstone" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hpa-RA-ik2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -836,7 +836,7 @@
                                 </connections>
                             </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="eyz-rK-vHn">
-                                <rect key="frame" x="261" y="303" width="69" height="21"/>
+                                <rect key="frame" x="261" y="393" width="69" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="jSN-tp-eBY"/>
                                     <constraint firstAttribute="height" constant="21" id="rHv-Pj-qjD"/>
@@ -850,7 +850,7 @@
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xtm-k4-miQ">
-                                <rect key="frame" x="73" y="261" width="64" height="69"/>
+                                <rect key="frame" x="73" y="351" width="64" height="69"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" image="arrow-1" id="sSj-79-RYM"/>
                                 <connections>
                                     <binding destination="XfG-lQ-9wD" name="hidden" keyPath="self.selectedDeck" id="Qgl-CX-Y2R">
@@ -860,13 +860,18 @@
                                     </binding>
                                 </connections>
                             </imageView>
+                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-P0-qZa">
+                                <rect key="frame" x="173" y="421" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8TN-EZ-mD0" secondAttribute="trailing" constant="5" id="0x6-zC-ycd"/>
                             <constraint firstAttribute="trailing" secondItem="ob2-XA-9oF" secondAttribute="trailing" constant="80" id="1AM-ib-gpd"/>
                             <constraint firstItem="ob2-XA-9oF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="38" id="4IM-Da-Ey8"/>
                             <constraint firstAttribute="trailing" secondItem="NfP-QD-Qkh" secondAttribute="trailing" id="7x6-wi-OqK"/>
+                            <constraint firstAttribute="trailing" secondItem="G6y-P0-qZa" secondAttribute="trailing" constant="171" id="AH3-gH-fad"/>
                             <constraint firstItem="ob2-XA-9oF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="8" id="I6J-6N-TCL"/>
+                            <constraint firstItem="G6y-P0-qZa" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="13" id="PRu-Rh-RMw"/>
                             <constraint firstItem="Onh-GZ-J3x" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Q7p-fK-4kp"/>
                             <constraint firstItem="eyz-rK-vHn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="SeE-Nt-X3l"/>
                             <constraint firstAttribute="trailing" secondItem="eyz-rK-vHn" secondAttribute="trailing" constant="30" id="URy-Lv-r18"/>
@@ -883,6 +888,7 @@
                         <outlet property="cardArrayController" destination="mAK-x9-bwt" id="MyG-Hf-tSj"/>
                         <outlet property="cardTable" destination="KGA-jY-Ur1" id="nb9-S0-SMN"/>
                         <outlet property="exportDeckBtn" destination="8TN-EZ-mD0" id="97a-sC-sJr"/>
+                        <outlet property="exportIndicator" destination="G6y-P0-qZa" id="06U-Y9-42f"/>
                         <outlet property="importBtn" destination="Onh-GZ-J3x" id="YMI-pp-3B0"/>
                         <outlet property="tableTitleLabel" destination="ob2-XA-9oF" id="QKd-rE-taj"/>
                     </connections>
@@ -895,7 +901,7 @@
                     </declaredKeys>
                 </arrayController>
             </objects>
-            <point key="canvasLocation" x="182" y="757"/>
+            <point key="canvasLocation" x="182" y="802"/>
         </scene>
         <!--Import from Web-->
         <scene sceneID="SrE-Hc-COs">

@@ -21,6 +21,11 @@
 		D0C10C331B7F00F600C2DBE2 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C321B7F00F600C2DBE2 /* Deck.m */; };
 		D0C10C3E1B7F2FBE00C2DBE2 /* TKWindowUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C3D1B7F2FBE00C2DBE2 /* TKWindowUtils.m */; };
 		D0C10C411B7F46C800C2DBE2 /* TKKeyCodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C401B7F46C800C2DBE2 /* TKKeyCodeHelper.m */; };
+		D0C615351B8787E300240C7A /* SGHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6152D1B8787E300240C7A /* SGHotKey.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0C615361B8787E300240C7A /* SGHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6152F1B8787E300240C7A /* SGHotKeyCenter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0C615371B8787E300240C7A /* SGKeyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C615301B8787E300240C7A /* SGKeyCodes.plist */; };
+		D0C615381B8787E300240C7A /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0C615391B8787E300240C7A /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615341B8787E300240C7A /* SGKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D164A98F9F01747111AFEDB3 /* libPods-HSDeckBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +71,15 @@
 		D0C10C3D1B7F2FBE00C2DBE2 /* TKWindowUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWindowUtils.m; sourceTree = "<group>"; };
 		D0C10C3F1B7F46C800C2DBE2 /* TKKeyCodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKKeyCodeHelper.h; sourceTree = "<group>"; };
 		D0C10C401B7F46C800C2DBE2 /* TKKeyCodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKKeyCodeHelper.m; sourceTree = "<group>"; };
+		D0C6152C1B8787E300240C7A /* SGHotKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKey.h; sourceTree = "<group>"; };
+		D0C6152D1B8787E300240C7A /* SGHotKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKey.m; sourceTree = "<group>"; };
+		D0C6152E1B8787E300240C7A /* SGHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHotKeyCenter.h; sourceTree = "<group>"; };
+		D0C6152F1B8787E300240C7A /* SGHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHotKeyCenter.m; sourceTree = "<group>"; };
+		D0C615301B8787E300240C7A /* SGKeyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SGKeyCodes.plist; sourceTree = "<group>"; };
+		D0C615311B8787E300240C7A /* SGKeyCodeTranslator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCodeTranslator.h; sourceTree = "<group>"; };
+		D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCodeTranslator.m; sourceTree = "<group>"; };
+		D0C615331B8787E300240C7A /* SGKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGKeyCombo.h; sourceTree = "<group>"; };
+		D0C615341B8787E300240C7A /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
 		DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -187,6 +201,7 @@
 			children = (
 				D0C10C3B1B7F2FBE00C2DBE2 /* TKWindowUtils */,
 				D0C10C181B7EEDD200C2DBE2 /* Importer */,
+				D0C6152B1B8787E300240C7A /* SGHotKeysLib */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -220,6 +235,22 @@
 				D0C10C401B7F46C800C2DBE2 /* TKKeyCodeHelper.m */,
 			);
 			path = TKWindowUtils;
+			sourceTree = "<group>";
+		};
+		D0C6152B1B8787E300240C7A /* SGHotKeysLib */ = {
+			isa = PBXGroup;
+			children = (
+				D0C6152C1B8787E300240C7A /* SGHotKey.h */,
+				D0C6152D1B8787E300240C7A /* SGHotKey.m */,
+				D0C6152E1B8787E300240C7A /* SGHotKeyCenter.h */,
+				D0C6152F1B8787E300240C7A /* SGHotKeyCenter.m */,
+				D0C615301B8787E300240C7A /* SGKeyCodes.plist */,
+				D0C615311B8787E300240C7A /* SGKeyCodeTranslator.h */,
+				D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */,
+				D0C615331B8787E300240C7A /* SGKeyCombo.h */,
+				D0C615341B8787E300240C7A /* SGKeyCombo.m */,
+			);
+			path = SGHotKeysLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +338,7 @@
 			files = (
 				D04C33301B7EEA9F00727E60 /* Images.xcassets in Resources */,
 				D04C33331B7EEA9F00727E60 /* Main.storyboard in Resources */,
+				D0C615371B8787E300240C7A /* SGKeyCodes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,14 +406,18 @@
 				D04C332E1B7EEA9F00727E60 /* ViewController.m in Sources */,
 				D0C10C301B7F00E500C2DBE2 /* Card.m in Sources */,
 				D04C332B1B7EEA9F00727E60 /* main.m in Sources */,
+				D0C615351B8787E300240C7A /* SGHotKey.m in Sources */,
 				D04C33291B7EEA9F00727E60 /* AppDelegate.m in Sources */,
 				D0C10C3E1B7F2FBE00C2DBE2 /* TKWindowUtils.m in Sources */,
 				D01F95521B807D4700AAD39C /* WindowController.m in Sources */,
+				D0C615361B8787E300240C7A /* SGHotKeyCenter.m in Sources */,
+				D0C615381B8787E300240C7A /* SGKeyCodeTranslator.m in Sources */,
 				D0C10C1B1B7EEDD200C2DBE2 /* TKHSDeckImporter.m in Sources */,
 				D0C10C331B7F00F600C2DBE2 /* Deck.m in Sources */,
 				D01F955B1B8106F900AAD39C /* RLMArray+TKHelper.m in Sources */,
 				D01F95551B8080AE00AAD39C /* ImportFromWebVC.m in Sources */,
 				D0C10C411B7F46C800C2DBE2 /* TKKeyCodeHelper.m in Sources */,
+				D0C615391B8787E300240C7A /* SGKeyCombo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

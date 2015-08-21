@@ -8,7 +8,7 @@ If you have any suggestions or issues, please leave in issues section. :)
 ### Demo Video
 [![Demo Video](/README/youtube-thumb.png)](http://www.youtube.com/watch?v=i_oS_82nofM)
 
-![Image](/README/ss1.png)
+<!-- ![Image](/README/ss1.png) -->
 
 ## Installation
 - Download the last version from [the releases page](https://github.com/hlung/Hearthstone-Deck-Builder/releases)
@@ -35,6 +35,11 @@ If you have any suggestions or issues, please leave in issues section. :)
 - Come back to HSDeckBuilder
 - Click "Export to Hearthstone" button
 - Wait until done, don't move the mouse!
+- TIP: While exporting, you can press ESC to cancel
+
+## Possible Improvements
+- If normal and golden cards existst, golden cards should be able to be selected
+- List out cards that you don't have after export
 
 ## Special thanks
 - [Epix37/Hearthstone-Deck-Tracker](https://github.com/Epix37/Hearthstone-Deck-Tracker) - for the inspiration. One of its functionality is the same as this app, but unfortunately, I use _Mac_, not _Windows_.

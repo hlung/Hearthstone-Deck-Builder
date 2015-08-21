@@ -43,6 +43,13 @@
                   success:(void (^)(Deck*))success
                      fail:(void (^)(NSString*))fail {
     
+    if (urlString.length == 0) {
+        if (fail) {
+            fail(@"URL is empty!");
+        }
+        return;
+    }
+    
     TKHSDeckImporterWebsite type = [self websiteTypeFromURL:urlString];
     
     switch (type) {
@@ -69,7 +76,7 @@
 + (void)importHearthPwnWithURL:(NSString*)urlString
                        success:(void (^)(Deck*))success
                           fail:(void (^)(NSString*))fail {
-    
+
     if ([self websiteTypeFromURL:urlString] != TKHSDeckImporterWebsite_hearthpwn) {
         if (fail) fail(@"URL not supported");
         return;

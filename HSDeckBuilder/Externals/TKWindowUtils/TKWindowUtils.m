@@ -143,11 +143,11 @@ void WindowListApplierFunction(const void *inputDictionary, void *context)
         NSString *applicationName = d[@"applicationName"];
         NSRect windowBounds = [(NSValue *)d[@"windowBounds"] rectValue];
         
+        // somehow there are other windows with same application name,
+        // having (0,0) or (1,1) or (1280, 22) sizes, so we have to filter them
         if ([applicationName hasSuffix:appPIDSuffix] &&
-            windowBounds.size.width > 1 && windowBounds.size.height > 1) { // somehow there are other windows with same application name, having (0,0) or (1,1) size, so we have to filter it out
-            
+            windowBounds.size.width > 22 && windowBounds.size.height > 22) {
 //            NSLog(@"windowBounds %@", NSStringFromRect(windowBounds));
-            
             return windowBounds;
         }
     }

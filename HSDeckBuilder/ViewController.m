@@ -11,6 +11,8 @@
 #import "TKWindowUtils.h"
 #import "RLMArray+TKHelper.h"
 #import "ImportFromWebVC.h"
+#import "SGHotKey.h"
+#import "SGHotKeyCenter.h"
 
 @interface ViewController ()
 @property (weak) IBOutlet NSButton *importBtn;
@@ -18,7 +20,10 @@
 @property (weak) IBOutlet NSArrayController *cardArrayController;
 @property (weak) IBOutlet NSTableView *cardTable;
 @property (weak) IBOutlet NSTextField *tableTitleLabel;
+@property (weak) IBOutlet NSProgressIndicator *exportIndicator;
 @property (assign, nonatomic) float delaySpeedAdjust;
+@property (assign, nonatomic) BOOL shouldCancelExportToHearthstone;
+@property (strong, nonatomic) SGHotKey *escHotKey;
 @end
 
 
@@ -36,17 +41,31 @@
     
 #if DEBUG
     // clear all data
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm transactionWithBlock:^{
-        [realm deleteAllObjects];
-    }];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm transactionWithBlock:^{
+//        [realm deleteAllObjects];
+//    }];
 #endif
     
     Deck *loadedDeck = [self loadDefaultDeck];
 //    Deck *loadedDeck = nil;
 //    NSLog(@"loadedDeck: %@", loadedDeck);
-
     self.selectedDeck = loadedDeck;
+    
+    [self setupHotkeys];
+}
+
+- (void)setupHotkeys {
+    self.escHotKey = [[SGHotKey alloc]
+                      initWithIdentifier:@"esc"
+                      keyCombo:[[SGKeyCombo alloc] initWithKeyCode:53 modifiers:1]
+                      target:self
+                      action:@selector(onEsc:)];
+}
+
+- (void)onEsc:(SGHotKey*)hotkey {
+    NSLog(@"ESC");
+    self.shouldCancelExportToHearthstone = true;
 }
 
 - (void)setSelectedDeck:(Deck *)selectedDeck {
@@ -55,11 +74,14 @@
     NSString *yourDeckStr = @"";
     if (selectedDeck.cardCount > 0) {
         yourDeckStr = [NSString stringWithFormat:@"Your deck: (%lu cards)", (unsigned long)selectedDeck.cardCount];
-        [self saveDefaultDeck:selectedDeck];
     }
     self.tableTitleLabel.stringValue = yourDeckStr;
     
     [self.cardArrayController setContent:selectedDeck.cards.allObjects];
+}
+
+- (void)saveSelectedDeck {
+    [self saveDefaultDeck:self.selectedDeck];
 }
 
 - (NSString *)documentsPath:(NSString *)fileName {
@@ -100,11 +122,12 @@
 
 - (IBAction)onExportToHearthstone:(id)sender {
     
+    // --- check game is running ---
     // Note: use `[[NSWorkspace sharedWorkspace] runningApplications]` to see app bundle IDs
     NSString *hsAppBundleID = @"unity.Blizzard Entertainment.Hearthstone";
-//    NSString *hsAppBundleID = @"com.apple.TextEdit";
+    //    NSString *hsAppBundleID = @"com.apple.TextEdit";
     //NSString *hsAppBundleID = @"com.sublimetext.2";
-
+    
     // try to bring Hearthstone window to front
     NSRunningApplication *hsApp = [[NSRunningApplication runningApplicationsWithBundleIdentifier:hsAppBundleID] firstObject];
     if ([hsApp activateWithOptions:NSApplicationActivateAllWindows] == false) {
@@ -114,27 +137,58 @@
     
     [self delay:1]; // wait for activate
     
+    // --- check window ---
     TKWindowUtils *winUtils = [[TKWindowUtils alloc] init];
-    NSRect hsWindowRect = [winUtils getAppWindowBoundsOfRunningApplication:hsApp];
+    __block NSRect hsWindowRect = [winUtils getAppWindowBoundsOfRunningApplication:hsApp];
     NSLog(@"hsWindowRect %@", NSStringFromRect(hsWindowRect));
-    
     if (hsWindowRect.size.height == 0) {
         [self showAlert:@"Hearthstone window not found!"];
         return;
     }
     
-//    NSPoint testPoint = NSMakePoint(hsWindowRect.origin.x + 40,
-//                                    hsWindowRect.origin.y + 40);
-//    [winUtils postEventMouseLeftClickAtPoint:testPoint];
+    // --- export ---
+    [self startExportToHearthstone];
+    // do in background to allow escHotKey to work
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
+    dispatch_async(queue, ^{
+        // Perform async operation
+        [self doExportToHearthstoneInBackground:hsWindowRect];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            // Update UI
+            [self endExportToHearthstone];
+            NSLog(@"DONE!");
+        });
+    });
+}
+
+- (void)doExportToHearthstoneInBackground:(NSRect)hsWindowRect {
+
+    //    NSPoint testPoint = NSMakePoint(hsWindowRect.origin.x + 40,
+    //                                    hsWindowRect.origin.y + 40);
+    //    [winUtils postEventMouseLeftClickAtPoint:testPoint];
     
     NSRect hsGameRect = [self hsGameRectFromWindowRect:hsWindowRect];
     NSLog(@"hsGameRect %@", NSStringFromRect(hsGameRect));
     
-    NSPoint hsCardSerchBoxPoint = [self hsPointOfCardSearchBoxFromGameRect:hsGameRect];
-    NSPoint hsResultCardPoint = [self hsPointOfCardResultFromGameRect:hsGameRect];
-//    [winUtils postEventMouseMoveToPoint:hsResultCardPoint];
+    TKWindowUtils *winUtils = [[TKWindowUtils alloc] init];
     
-    for (Card *card in self.selectedDeck.cards) {
+    NSPoint hsCardSerchBoxPoint = [self hsPointOfCardSearchBoxFromGameRect:hsGameRect];
+    NSLog(@"hsCardSerchBoxPoint %@", NSStringFromPoint(hsCardSerchBoxPoint));
+    NSPoint hsResultCardPoint = [self hsPointOfCardResultFromGameRect:hsGameRect];
+    NSLog(@"hsResultCardPoint %@", NSStringFromPoint(hsResultCardPoint));
+    //    [winUtils postEventMouseMoveToPoint:hsResultCardPoint];
+    
+    // Load the deck again to access in this thread, because Realm objects can only be
+    // accessed from the thread it is created. Otherwise Realm will throw an exception.
+    Deck *deck = [self loadDefaultDeck];
+    
+    for (Card *card in deck.cards) {
+        
+        if (self.shouldCancelExportToHearthstone) {
+            break; // cancel
+        }
+        
         [winUtils postEventMouseLeftClickAtPoint:hsCardSerchBoxPoint];
         [self delay:0.1]; // add delay so text box is fully focused
         [winUtils postEventKeyboardTypeWithString:card.name];
@@ -146,8 +200,18 @@
         }
         [self delay:0.2];
     }
-    
-    NSLog(@"DONE!");
+}
+
+- (void)startExportToHearthstone {
+    [[SGHotKeyCenter sharedCenter] registerHotKey:self.escHotKey];
+    [self.exportIndicator startAnimation:nil];
+    self.shouldCancelExportToHearthstone = false;
+}
+
+- (void)endExportToHearthstone {
+    [[SGHotKeyCenter sharedCenter] unregisterHotKey:self.escHotKey];
+    [self.exportIndicator stopAnimation:nil];
+    self.shouldCancelExportToHearthstone = false;
 }
 
 - (IBAction)onDonate:(id)sender {

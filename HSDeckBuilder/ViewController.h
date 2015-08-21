@@ -12,6 +12,7 @@
 @interface ViewController : NSViewController
 
 @property (strong, nonatomic) Deck *selectedDeck;
+- (void)saveSelectedDeck;
 
 @end
 

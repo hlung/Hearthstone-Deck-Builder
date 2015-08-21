@@ -46,7 +46,7 @@
     
     [self.indicator startAnimation:nil];
     self.statusLabel.stringValue = @"Downloading...";
-    self.importBtn.enabled = self.cancelBtn.enabled = false;
+    self.urlTextField.enabled = self.importBtn.enabled = self.cancelBtn.enabled = false;
     
     [TKHSDeckImporter
      importDeckFromURL:urlString
@@ -54,12 +54,13 @@
          
          deck.generatedFromURL = urlString;
          [self.indicator stopAnimation:nil];
-         NSString *str = [NSString stringWithFormat:@"Download Completed"];
+         NSString *str = [NSString stringWithFormat:@"✓ Download Completed"];
          //NSString *str = [NSString stringWithFormat:@"Download Completed, got %ld cards", (long)[deck cardCount]];
          self.statusLabel.stringValue = str;
          
          // pass deck back
          self.mainVC.selectedDeck = deck;
+         [self.mainVC saveSelectedDeck];
          
          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
              [self dismissViewController:self];
@@ -68,8 +69,8 @@
      } fail:^(NSString *error) {
          
          [self.indicator stopAnimation:nil];
-         self.statusLabel.stringValue = error;
-         self.importBtn.enabled = self.cancelBtn.enabled = true;
+         self.statusLabel.stringValue = [NSString stringWithFormat:@"✗ Download Error: %@", error];
+         self.urlTextField.enabled = self.importBtn.enabled = self.cancelBtn.enabled = true;
      }];
 
 }
