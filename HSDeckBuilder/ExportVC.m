@@ -157,6 +157,7 @@
 #pragma mark - utilities
 
 - (void)showAlert:(NSString*)string {
+    [self dismissViewController:self];
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:string];
     [alert beginSheetModalForWindow:[NSApplication sharedApplication].mainWindow

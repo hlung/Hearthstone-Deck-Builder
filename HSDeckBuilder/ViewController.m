@@ -33,10 +33,10 @@
     
 #if DEBUG
     // clear all data
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm transactionWithBlock:^{
-//        [realm deleteAllObjects];
-//    }];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm deleteAllObjects];
+    }];
 #endif
     
     Deck *loadedDeck = [Deck loadDefaultDeck];
@@ -50,7 +50,14 @@
     
     NSString *yourDeckStr = @"";
     if (selectedDeck.cardCount > 0) {
+        // has deck
         yourDeckStr = [NSString stringWithFormat:@"Your deck: (%lu cards)", (unsigned long)selectedDeck.cardCount];
+        //self.exportDeckBtn.highlighted = true;
+        //[self.exportDeckBtn setKeyEquivalent:@"\r"];
+    }
+    else {
+        // no deck
+        //[self.exportDeckBtn setKeyEquivalent:nil];
     }
     self.tableTitleLabel.stringValue = yourDeckStr;
     
