@@ -31,12 +31,12 @@
     //    return nil;
 }
 
-- (void)saveAsDefaultDeck:(Deck*)deck {
+- (void)saveAsDefaultDeck {
     // Persist data
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
         [realm deleteAllObjects];
-        [realm addObject:deck];
+        [realm addObject:self];
     }];
 }
 
