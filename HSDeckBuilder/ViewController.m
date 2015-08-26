@@ -33,14 +33,13 @@
     
 #if DEBUG
     // clear all data
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm transactionWithBlock:^{
-        [realm deleteAllObjects];
-    }];
+//    RLMRealm *realm = [RLMRealm defaultRealm];
+//    [realm transactionWithBlock:^{
+//        [realm deleteAllObjects];
+//    }];
 #endif
     
     Deck *loadedDeck = [Deck loadDefaultDeck];
-//    Deck *loadedDeck = nil;
 //    NSLog(@"loadedDeck: %@", loadedDeck);
     self.selectedDeck = loadedDeck;
 }

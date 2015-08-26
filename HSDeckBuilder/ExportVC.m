@@ -122,11 +122,15 @@
         
         if (self.shouldCancelExportToHearthstone) break; // cancel
         
+        // click search box
         [winUtils postEventMouseLeftClickAtPoint:hsCardSerchBoxPoint];
-        [self delay:0.1]; // add delay so text box is fully focused
+        [self delay:0.1];
+        
+        // enter card name
         [winUtils postEventKeyboardTypeWithString:card.name];
         [winUtils postEventKeyboardTypeKeyCode:TK_CGKeyCode_RETURN];
-        [self delay:0.1];
+        [self delay:0.3];
+        
         for (NSUInteger i = 0; i < card.count; i++) {
             
             if (self.shouldCancelExportToHearthstone) break; // cancel
@@ -136,10 +140,11 @@
                 self.subtitleLabel.stringValue =
                 [NSString stringWithFormat:@"%lu / %lu cards", ++importedCardCount, (unsigned long)totalCardCount];
             });
+            
+            // select card
             [winUtils postEventMouseLeftClickAtPoint:hsResultCardPoint];
             [self delay:0.2];
         }
-        [self delay:0.2];
     }
 }
 
