@@ -903,11 +903,11 @@
             <objects>
                 <viewController title="Import" showSeguePresentationStyle="single" id="kPf-M7-dDp" customClass="ImportFromWebVC" sceneMemberID="viewController">
                     <view key="view" id="91b-V9-p6h">
-                        <rect key="frame" x="0.0" y="0.0" width="366" height="209"/>
+                        <rect key="frame" x="0.0" y="0.0" width="366" height="190"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-7e-chs">
-                                <rect key="frame" x="11" y="58" width="344" height="80"/>
+                                <rect key="frame" x="11" y="55" width="344" height="64"/>
                                 <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="e.g. http://www.hearthpwn.com/decks/224656-senfglas-1-legend-grim-patron-warrior" drawsBackground="YES" id="Rsi-nZ-g5j">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -915,25 +915,15 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tua-gH-Int">
-                                <rect key="frame" x="9" y="146" width="348" height="51"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Supported websites (เว็บไซต์ที่รองรับ):   • hearthpwn.com/decks/*   • icy-veins.com/hearthstone/*" id="iN8-qj-69C">
+                                <rect key="frame" x="9" y="127" width="348" height="51"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Supported websites:   • hearthpwn.com/decks/*   • icy-veins.com/hearthstone/*" id="iN8-qj-69C">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-Rh-hks">
-                                <rect key="frame" x="186" y="6" width="97" height="32"/>
-                                <buttonCell key="cell" type="push" title="  Import  " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nCG-gq-MF4">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onImportBtn:" target="kPf-M7-dDp" id="b5Z-q9-2OP"/>
-                                </connections>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zF4-3Q-48H">
-                                <rect key="frame" x="9" y="37" width="348" height="17"/>
+                                <rect key="frame" x="9" y="35" width="348" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="cV6-wM-mYQ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -941,7 +931,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a20-g6-XdD">
-                                <rect key="frame" x="278" y="6" width="83" height="32"/>
+                                <rect key="frame" x="188" y="1" width="83" height="32"/>
                                 <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eX8-ls-wBd">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -954,26 +944,36 @@ Gw
                                 </connections>
                             </button>
                             <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ZRf-Sb-Jx2">
-                                <rect key="frame" x="171" y="15" width="16" height="16"/>
+                                <rect key="frame" x="11" y="10" width="16" height="16"/>
                             </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-Rh-hks">
+                                <rect key="frame" x="264" y="1" width="97" height="32"/>
+                                <buttonCell key="cell" type="push" title="  Import  " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nCG-gq-MF4">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onImportBtn:" target="kPf-M7-dDp" id="b5Z-q9-2OP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="BMy-Rh-hks" firstAttribute="trailing" secondItem="zF4-3Q-48H" secondAttribute="trailing" id="2fd-dF-rNn"/>
                             <constraint firstAttribute="trailing" secondItem="Vyr-7e-chs" secondAttribute="trailing" constant="11" id="3Gb-bw-LZa"/>
-                            <constraint firstItem="zF4-3Q-48H" firstAttribute="top" secondItem="Vyr-7e-chs" secondAttribute="bottom" constant="4" id="4gb-fq-Od0"/>
-                            <constraint firstAttribute="bottom" secondItem="BMy-Rh-hks" secondAttribute="bottom" constant="13" id="A0N-hm-M2E"/>
+                            <constraint firstItem="zF4-3Q-48H" firstAttribute="top" secondItem="Vyr-7e-chs" secondAttribute="bottom" constant="3" id="4gb-fq-Od0"/>
+                            <constraint firstItem="BMy-Rh-hks" firstAttribute="leading" secondItem="a20-g6-XdD" secondAttribute="trailing" constant="5" id="EQ4-1c-AHS"/>
                             <constraint firstAttribute="trailing" secondItem="zF4-3Q-48H" secondAttribute="trailing" constant="11" id="H02-ln-pM2"/>
                             <constraint firstItem="Tua-gH-Int" firstAttribute="leading" secondItem="91b-V9-p6h" secondAttribute="leading" constant="11" id="JQs-Fh-dL4"/>
                             <constraint firstItem="Vyr-7e-chs" firstAttribute="top" secondItem="Tua-gH-Int" secondAttribute="bottom" constant="8" id="Li9-7u-brV"/>
-                            <constraint firstAttribute="bottom" secondItem="zF4-3Q-48H" secondAttribute="bottom" constant="37" id="MgM-oe-uAp"/>
+                            <constraint firstItem="a20-g6-XdD" firstAttribute="top" secondItem="zF4-3Q-48H" secondAttribute="bottom" constant="6" id="MZn-nF-RV3"/>
+                            <constraint firstAttribute="bottom" secondItem="zF4-3Q-48H" secondAttribute="bottom" constant="35" id="MgM-oe-uAp"/>
+                            <constraint firstItem="ZRf-Sb-Jx2" firstAttribute="leading" secondItem="zF4-3Q-48H" secondAttribute="leading" id="Neb-Wa-nnK"/>
                             <constraint firstItem="zF4-3Q-48H" firstAttribute="leading" secondItem="91b-V9-p6h" secondAttribute="leading" constant="11" id="NvX-0P-agy"/>
-                            <constraint firstItem="BMy-Rh-hks" firstAttribute="leading" secondItem="ZRf-Sb-Jx2" secondAttribute="trailing" constant="5" id="Q0U-vp-YZ2"/>
                             <constraint firstAttribute="trailing" secondItem="Tua-gH-Int" secondAttribute="trailing" constant="11" id="SCr-eH-Jfr"/>
                             <constraint firstItem="Tua-gH-Int" firstAttribute="top" secondItem="91b-V9-p6h" secondAttribute="top" constant="12" id="TX6-ff-ur7"/>
-                            <constraint firstAttribute="bottom" secondItem="a20-g6-XdD" secondAttribute="bottom" constant="13" id="VyM-2V-aJj"/>
-                            <constraint firstItem="a20-g6-XdD" firstAttribute="leading" secondItem="BMy-Rh-hks" secondAttribute="trailing" constant="7" id="eqe-G2-UYs"/>
-                            <constraint firstAttribute="trailing" secondItem="a20-g6-XdD" secondAttribute="trailing" constant="11" id="fYa-AW-FEg"/>
-                            <constraint firstItem="BMy-Rh-hks" firstAttribute="centerY" secondItem="ZRf-Sb-Jx2" secondAttribute="centerY" constant="-0.5" id="gAU-fQ-oXN"/>
-                            <constraint firstAttribute="bottom" secondItem="Vyr-7e-chs" secondAttribute="bottom" constant="58" id="iaO-j7-NX0"/>
+                            <constraint firstItem="ZRf-Sb-Jx2" firstAttribute="centerY" secondItem="a20-g6-XdD" secondAttribute="centerY" id="c5P-TU-7Xg"/>
+                            <constraint firstAttribute="bottom" secondItem="Vyr-7e-chs" secondAttribute="bottom" constant="55" id="iaO-j7-NX0"/>
+                            <constraint firstItem="BMy-Rh-hks" firstAttribute="baseline" secondItem="a20-g6-XdD" secondAttribute="baseline" id="u8O-13-QRA"/>
                             <constraint firstItem="Vyr-7e-chs" firstAttribute="leading" secondItem="91b-V9-p6h" secondAttribute="leading" constant="11" id="wSB-N3-jcb"/>
                         </constraints>
                     </view>
@@ -987,7 +987,7 @@ Gw
                 </viewController>
                 <customObject id="Ldy-6g-ff8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="703.5"/>
+            <point key="canvasLocation" x="704" y="694"/>
         </scene>
         <!--Export-->
         <scene sceneID="6Mq-sz-fY3">

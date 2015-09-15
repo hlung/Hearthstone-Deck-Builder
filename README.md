@@ -42,6 +42,8 @@ If you have any suggestions or issues, please leave in issues section. :)
 ## Possible Improvements
 - If normal and golden cards existst, golden cards should be able to be selected
 - List out cards that you don't have after export
+- Read URL from clipboard
+- Remove Realm framework. I feel like it is overkill, we can just use NSUserDefaults
 
 ## Special thanks
 - [Epix37/Hearthstone-Deck-Tracker](https://github.com/Epix37/Hearthstone-Deck-Tracker) - for the inspiration. One of its functionality is the same as this app, but unfortunately, I use _Mac_, not _Windows_.
