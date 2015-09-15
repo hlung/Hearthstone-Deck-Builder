@@ -127,10 +127,10 @@ CGKeyCode keyCodeForChar(const char c)
 }
 
 + (NSArray*)keyCodesFormString:(NSString *)string {
-    string = [string lowercaseString];
+
+    const char *mychar = [[string lowercaseString] UTF8String];
     NSMutableArray *m = [NSMutableArray array];
-    
-    const char *mychar = [string UTF8String];
+
     for (int i = 0; mychar[i] != '\0'; i++){
         CGKeyCode keyCode = [self keyCodeFormChar:mychar[i]];
         [m addObject:@(keyCode)];

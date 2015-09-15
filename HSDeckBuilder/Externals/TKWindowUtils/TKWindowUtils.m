@@ -158,22 +158,27 @@ void WindowListApplierFunction(const void *inputDictionary, void *context)
 #pragma mark - Mouse & Keyboard Events
 
 - (void)postEventMouseLeftClickAtPoint:(CGPoint)pt {
-    CGEventRef mouseDownEv = CGEventCreateMouseEvent (NULL,kCGEventLeftMouseDown,pt,kCGMouseButtonLeft);
-    CGEventPost (kCGHIDEventTap, mouseDownEv);
-    CGEventRef mouseUpEv = CGEventCreateMouseEvent (NULL,kCGEventLeftMouseUp,pt,kCGMouseButtonLeft);
-    CGEventPost (kCGHIDEventTap, mouseUpEv );
+    CGEventRef mouseDownEv = CGEventCreateMouseEvent(NULL,kCGEventLeftMouseDown,pt,kCGMouseButtonLeft);
+    CGEventPost(kCGHIDEventTap, mouseDownEv);
+    CFRelease(mouseDownEv);
+    CGEventRef mouseUpEv = CGEventCreateMouseEvent(NULL,kCGEventLeftMouseUp,pt,kCGMouseButtonLeft);
+    CGEventPost(kCGHIDEventTap, mouseUpEv );
+    CFRelease(mouseUpEv);
 }
 
 - (void)postEventMouseMoveToPoint:(CGPoint)pt {
-    CGEventRef mouseUpEv = CGEventCreateMouseEvent (NULL,kCGEventMouseMoved,pt,kCGMouseButtonLeft);
-    CGEventPost (kCGHIDEventTap, mouseUpEv );
+    CGEventRef mouseUpEv = CGEventCreateMouseEvent(NULL,kCGEventMouseMoved,pt,kCGMouseButtonLeft);
+    CGEventPost(kCGHIDEventTap, mouseUpEv );
+    CFRelease(mouseUpEv);
 }
 
 - (void)postEventKeyboardTypeKeyCode:(CGKeyCode)keyCode {
     CGEventRef eventDown = CGEventCreateKeyboardEvent(NULL, keyCode, true);
-    CGEventPost (kCGHIDEventTap, eventDown);
+    CGEventPost(kCGHIDEventTap, eventDown);
+    CFRelease(eventDown);
     CGEventRef eventUp = CGEventCreateKeyboardEvent(NULL, keyCode, false);
-    CGEventPost (kCGHIDEventTap, eventUp);
+    CGEventPost(kCGHIDEventTap, eventUp);
+    CFRelease(eventUp);
     NSLog(@"keyCode: %d", keyCode);
 }
 
