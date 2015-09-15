@@ -8,6 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ExportVC : NSViewController
+@class ExportVC, Card;
 
+@protocol ExportVCDelegate <NSObject>
+@optional
+/** This is called in main thread */
+- (void)exportVC:(ExportVC*)vc processingCardIndex:(NSInteger)index;
+@end
+
+@interface ExportVC : NSViewController
+@property (weak, nonatomic) NSObject <ExportVCDelegate>*delegate;
 @end

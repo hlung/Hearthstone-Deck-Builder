@@ -122,6 +122,13 @@
         
         if (self.shouldCancelExportToHearthstone) break; // cancel
         
+        if ([self.delegate respondsToSelector:@selector(exportVC:processingCardIndex:)]) {
+            NSInteger index = [deck.cards indexOfObject:card];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.delegate exportVC:self processingCardIndex:index];
+            });
+        }
+        
         // click search box
         [winUtils postEventMouseLeftClickAtPoint:hsCardSerchBoxPoint];
         [self delay:0.1];

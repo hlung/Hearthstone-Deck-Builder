@@ -12,7 +12,7 @@
 #import "ImportFromWebVC.h"
 #import "ExportVC.h"
 
-@interface ViewController ()
+@interface ViewController () <ExportVCDelegate>
 @property (weak) IBOutlet NSButton *importBtn;
 @property (weak) IBOutlet NSButton *exportDeckBtn;
 @property (weak) IBOutlet NSArrayController *cardArrayController;
@@ -82,7 +82,8 @@
         vc.mainVC = self;
     }
     else if ([segue.identifier isEqualToString:@"export"]) {
-        
+        ExportVC *vc = segue.destinationController;
+        vc.delegate = self;
     }
 }
 
@@ -99,5 +100,16 @@
 //- (CGPoint)mousePointFromScreenPoint:(CGPoint)sp {
 //    return CGPointMake(sp.x, theScreen.frame.size.height - sp.y);
 //}
+
+#pragma mark - ExportVCDelegate
+
+- (void)exportVC:(ExportVC*)vc processingCardIndex:(NSInteger)index {
+    Card *c = self.selectedDeck.cards[index];
+    if (c) {
+        NSLog(@"card: %@", c.name);
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:index];
+        [self.cardTable selectRowIndexes:indexSet byExtendingSelection:false];
+    }
+}
 
 @end

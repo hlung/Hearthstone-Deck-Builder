@@ -41,7 +41,7 @@ If you have any suggestions or issues, please leave in issues section. :)
 
 ## Possible Improvements
 - If normal and golden cards existst, golden cards should be able to be selected
-- List out cards that you don't have after export
+- After export, list out the cards that you didn't have
 - Read URL from clipboard
 - Remove Realm framework. I feel like it is overkill, we can just use NSUserDefaults
 
