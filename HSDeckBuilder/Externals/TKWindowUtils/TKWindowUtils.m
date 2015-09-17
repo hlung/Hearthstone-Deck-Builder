@@ -184,6 +184,7 @@ void WindowListApplierFunction(const void *inputDictionary, void *context)
 
 - (void)postEventKeyboardTypeWithString:(NSString*)str {
 //    CGKeyCode keyCode = [TKKeyCodeHelper keyCodeFormChar:'h']; // 38
+    
     NSArray *arr = [TKKeyCodeHelper keyCodesFormString:str];
     for (NSNumber *keyCodeNum in arr) {
         CGKeyCode keyCode = [keyCodeNum unsignedShortValue];

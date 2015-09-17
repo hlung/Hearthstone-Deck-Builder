@@ -1,3 +1,4 @@
+
 //
 //  TKKeyCodeHelper.m
 //  HSDeckBuilder
@@ -122,19 +123,22 @@ CGKeyCode keyCodeForChar(const char c)
     return code;
 }
 
-+ (CGKeyCode)keyCodeFormChar:(char)c {
++ (CGKeyCode)keyCodeFormChar:(const char)c {
     return keyCodeForChar(c);
 }
 
 + (NSArray*)keyCodesFormString:(NSString *)string {
-
-    const char *mychar = [[string lowercaseString] UTF8String];
     NSMutableArray *m = [NSMutableArray array];
-
-    for (int i = 0; mychar[i] != '\0'; i++){
-        CGKeyCode keyCode = [self keyCodeFormChar:mychar[i]];
-        [m addObject:@(keyCode)];
-//        NSLog(@"keyCode %d", keyCode);
+    if (string.length > 0) {
+        const char *mychar = [[string lowercaseString] UTF8String];
+        
+        // BUG FIX:
+        // mychar pointer seems to be NULL when built in Release configuration, which has
+        // Optimization Level above "None". The hack is change change it to "None".
+        for (int i = 0; mychar[i] != '\0'; i++){
+            CGKeyCode keyCode = [self keyCodeFormChar:mychar[i]];
+            [m addObject:@(keyCode)];
+        }
     }
     return m;
 }
