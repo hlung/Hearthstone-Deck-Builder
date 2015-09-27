@@ -153,6 +153,12 @@
             [self delay:0.2];
         }
     }
+    
+    // clean up search box
+    [winUtils postEventMouseLeftClickAtPoint:hsCardSerchBoxPoint];
+    [self delay:0.1];
+    [winUtils postEventKeyboardTypeKeyCode:TK_CGKeyCode_DELETE];
+    [winUtils postEventKeyboardTypeKeyCode:TK_CGKeyCode_RETURN];
 }
 
 - (void)startExportToHearthstone {
