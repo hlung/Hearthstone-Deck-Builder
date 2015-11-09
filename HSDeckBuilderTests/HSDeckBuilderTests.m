@@ -34,7 +34,8 @@
     [TKHSDeckImporter
      importDeckFromURL:urlString
      success:^(Deck *deck) {
-         XCTAssert(deck.cards.count == 20, @"Pass");
+         // deck.cards.count may vary as deck get edited
+         XCTAssert(deck.cards.count >= 15, @"Pass");
          XCTAssert(deck.cardCount == 30, @"Pass");
          [expectation fulfill];
          
@@ -42,7 +43,7 @@
          XCTFail(@"TKHSDeckImporter -importDeckFromURL: Failed with error: %@", error);
      }];
     
-    [self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:20.0 handler:^(NSError *error) {
         if(error) {
             XCTFail(@"Expectation Failed with error: %@", error);
         }
@@ -73,7 +74,8 @@
     [TKHSDeckImporter
      importDeckFromURL:urlString
      success:^(Deck *deck) {
-         XCTAssert(deck.cards.count == 17, @"Pass");
+         // deck.cards.count may vary as deck get edited
+         XCTAssert(deck.cards.count >= 15, @"Pass");
          XCTAssert(deck.cardCount == 30, @"Pass");
          [expectation fulfill];
          
@@ -81,7 +83,7 @@
          XCTFail(@"TKHSDeckImporter -importDeckFromURL: Failed with error: %@", error);
      }];
     
-    [self waitForExpectationsWithTimeout:10.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:20.0 handler:^(NSError *error) {
         if(error) {
             XCTFail(@"Expectation Failed with error: %@", error);
         }
@@ -96,16 +98,16 @@
 //    XCTAssert([cardNameNodes count] > 0, @"Pass"); // == 16
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+//- (void)testExample {
+//    // This is an example of a functional test case.
+//    XCTAssert(YES, @"Pass");
+//}
+//
+//- (void)testPerformanceExample {
+//    // This is an example of a performance test case.
+//    [self measureBlock:^{
+//        // Put the code you want to measure the time of here.
+//    }];
+//}
 
 @end
