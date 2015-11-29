@@ -10,4 +10,8 @@
 
 @implementation Card
 
+- (void)setName:(NSString *)name {
+    _name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+}
+
 @end

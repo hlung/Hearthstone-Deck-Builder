@@ -113,8 +113,6 @@
     //                                    hsWindowRect.origin.y + 40);
     //    [winUtils postEventMouseLeftClickAtPoint:testPoint];
     
-    // Load the deck again to access in this thread, because Realm objects can only be
-    // accessed from the thread it is created. Otherwise Realm will throw an exception.
     Deck *deck = [Deck loadDefaultDeck];
     __block NSUInteger importedCardCount = 0;
     NSUInteger totalCardCount = deck.cardCount;

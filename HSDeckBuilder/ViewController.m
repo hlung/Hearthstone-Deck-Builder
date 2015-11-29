@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-
-#import "RLMArray+TKHelper.h"
 #import "ImportFromWebVC.h"
 #import "ExportVC.h"
 
@@ -33,10 +31,7 @@
     
 #if DEBUG
     // clear all data
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    [realm transactionWithBlock:^{
-//        [realm deleteAllObjects];
-//    }];
+//    [Deck deleteDefaultDeck];
 #endif
     
     Deck *loadedDeck = [Deck loadDefaultDeck];
@@ -60,7 +55,8 @@
     }
     self.tableTitleLabel.stringValue = yourDeckStr;
     
-    [self.cardArrayController setContent:selectedDeck.cards.allObjects];
+    //[self.cardArrayController setContent:@[@{@"name":@"haha", @"count": @2}]];
+    [self.cardArrayController setContent:selectedDeck.contentForArrayController];
 }
 
 - (NSString *)documentsPath:(NSString *)fileName {

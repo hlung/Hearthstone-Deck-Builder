@@ -18,21 +18,21 @@ PODS:
   - AFNetworking/Security (2.5.4)
   - AFNetworking/Serialization (2.5.4)
   - hpple (0.2.0)
-  - Realm (0.94.1):
-    - Realm/Headers (= 0.94.1)
-  - Realm/Headers (0.94.1)
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
   - RegExCategories (1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - hpple
-  - Realm
+  - Mantle
   - RegExCategories (~> 1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
-  Realm: d999a6cf0b41577a077349c9cc9d496cc62a7d17
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

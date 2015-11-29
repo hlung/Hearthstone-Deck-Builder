@@ -7,15 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Realm/Realm.h>
+#import <Mantle/Mantle.h>
 #import "Card.h"
 
-@interface Deck : RLMObject
-@property NSString *name;
-@property NSString *generatedFromURL;
-@property RLMArray<Card> *cards;
-- (NSUInteger)cardCount;
+@interface Deck : MTLModel
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *generatedFromURL;
+@property (nonatomic, strong) NSMutableArray<Card *> *cards;
+
 + (Deck*)loadDefaultDeck;
++ (void)deleteDefaultDeck;
+
+- (NSArray<NSDictionary *>*)contentForArrayController;
+- (NSUInteger)cardCount;
 - (void)saveAsDefaultDeck;
-//- (NSString*)description;
+
 @end

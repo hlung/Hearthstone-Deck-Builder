@@ -6,13 +6,9 @@ target 'HSDeckBuilder' do
 pod 'AFNetworking'
 pod 'hpple'
 pod 'RegExCategories', '~> 1.0'
-
-pod 'Realm'
+pod 'Mantle'
 end
 
 target 'HSDeckBuilderTests' do
-#pod 'AFNetworking'
-#pod 'hpple'
-#pod 'RegExCategories', '~> 1.0'
 end
 

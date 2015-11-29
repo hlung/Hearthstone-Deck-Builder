@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D01F95521B807D4700AAD39C /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F95511B807D4700AAD39C /* WindowController.m */; };
 		D01F95551B8080AE00AAD39C /* ImportFromWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */; };
-		D01F955B1B8106F900AAD39C /* RLMArray+TKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0231EDD1B7FB5F70050BEF3 /* RLMArray+TKHelper.m */; };
 		D04C33291B7EEA9F00727E60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C33281B7EEA9F00727E60 /* AppDelegate.m */; };
 		D04C332B1B7EEA9F00727E60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C332A1B7EEA9F00727E60 /* main.m */; };
 		D04C332E1B7EEA9F00727E60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C332D1B7EEA9F00727E60 /* ViewController.m */; };
 		D04C33301B7EEA9F00727E60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04C332F1B7EEA9F00727E60 /* Images.xcassets */; };
 		D04C33331B7EEA9F00727E60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04C33311B7EEA9F00727E60 /* Main.storyboard */; };
 		D04C333F1B7EEA9F00727E60 /* HSDeckBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C333E1B7EEA9F00727E60 /* HSDeckBuilderTests.m */; };
+		D0ACA06B1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA06A1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m */; };
 		D0C10C1B1B7EEDD200C2DBE2 /* TKHSDeckImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C1A1B7EEDD200C2DBE2 /* TKHSDeckImporter.m */; };
 		D0C10C301B7F00E500C2DBE2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C2F1B7F00E500C2DBE2 /* Card.m */; };
 		D0C10C331B7F00F600C2DBE2 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C321B7F00F600C2DBE2 /* Deck.m */; };
@@ -48,8 +48,6 @@
 		D01F95511B807D4700AAD39C /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		D01F95531B8080AE00AAD39C /* ImportFromWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportFromWebVC.h; sourceTree = "<group>"; };
 		D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportFromWebVC.m; sourceTree = "<group>"; };
-		D0231EDC1B7FB5F70050BEF3 /* RLMArray+TKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RLMArray+TKHelper.h"; sourceTree = "<group>"; };
-		D0231EDD1B7FB5F70050BEF3 /* RLMArray+TKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RLMArray+TKHelper.m"; sourceTree = "<group>"; };
 		D04C33221B7EEA9F00727E60 /* HSDeckBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSDeckBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04C33261B7EEA9F00727E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04C33271B7EEA9F00727E60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +60,8 @@
 		D04C33381B7EEA9F00727E60 /* HSDeckBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSDeckBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04C333D1B7EEA9F00727E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04C333E1B7EEA9F00727E60 /* HSDeckBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSDeckBuilderTests.m; sourceTree = "<group>"; };
+		D0ACA0691C0AEC190057A5D2 /* NSUserDefaults+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+NSCoding.h"; sourceTree = "<group>"; };
+		D0ACA06A1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+NSCoding.m"; sourceTree = "<group>"; };
 		D0C10C191B7EEDD200C2DBE2 /* TKHSDeckImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHSDeckImporter.h; sourceTree = "<group>"; };
 		D0C10C1A1B7EEDD200C2DBE2 /* TKHSDeckImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKHSDeckImporter.m; sourceTree = "<group>"; };
 		D0C10C2E1B7F00E500C2DBE2 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		D0231EDB1B7FB5770050BEF3 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D0231EDC1B7FB5F70050BEF3 /* RLMArray+TKHelper.h */,
-				D0231EDD1B7FB5F70050BEF3 /* RLMArray+TKHelper.m */,
+				D0ACA0691C0AEC190057A5D2 /* NSUserDefaults+NSCoding.h */,
+				D0ACA06A1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -155,22 +155,15 @@
 		D04C33241B7EEA9F00727E60 /* HSDeckBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				D04C332C1B7EEA9F00727E60 /* ViewController.h */,
-				D04C332D1B7EEA9F00727E60 /* ViewController.m */,
-				D01F95531B8080AE00AAD39C /* ImportFromWebVC.h */,
-				D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */,
-				D0C6153A1B8799C200240C7A /* ExportVC.h */,
-				D0C6153B1B8799C200240C7A /* ExportVC.m */,
-				D04C332F1B7EEA9F00727E60 /* Images.xcassets */,
-				D04C33311B7EEA9F00727E60 /* Main.storyboard */,
-				D0231EDB1B7FB5770050BEF3 /* Categories */,
-				D0C10C1C1B7EEE2100C2DBE2 /* Models */,
-				D0C10C171B7EEDD200C2DBE2 /* Externals */,
-				D04C33251B7EEA9F00727E60 /* Supporting Files */,
-				D01F95501B807D4700AAD39C /* WindowController.h */,
-				D01F95511B807D4700AAD39C /* WindowController.m */,
 				D04C33271B7EEA9F00727E60 /* AppDelegate.h */,
 				D04C33281B7EEA9F00727E60 /* AppDelegate.m */,
+				D0C10C1C1B7EEE2100C2DBE2 /* Models */,
+				D0ACA06C1C0AF1560057A5D2 /* Controllers */,
+				D0231EDB1B7FB5770050BEF3 /* Categories */,
+				D0C10C171B7EEDD200C2DBE2 /* Externals */,
+				D04C332F1B7EEA9F00727E60 /* Images.xcassets */,
+				D04C33311B7EEA9F00727E60 /* Main.storyboard */,
+				D04C33251B7EEA9F00727E60 /* Supporting Files */,
 			);
 			path = HSDeckBuilder;
 			sourceTree = "<group>";
@@ -199,6 +192,21 @@
 				D04C333D1B7EEA9F00727E60 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0ACA06C1C0AF1560057A5D2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D01F95501B807D4700AAD39C /* WindowController.h */,
+				D01F95511B807D4700AAD39C /* WindowController.m */,
+				D04C332C1B7EEA9F00727E60 /* ViewController.h */,
+				D04C332D1B7EEA9F00727E60 /* ViewController.m */,
+				D01F95531B8080AE00AAD39C /* ImportFromWebVC.h */,
+				D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */,
+				D0C6153A1B8799C200240C7A /* ExportVC.h */,
+				D0C6153B1B8799C200240C7A /* ExportVC.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D0C10C171B7EEDD200C2DBE2 /* Externals */ = {
@@ -271,6 +279,7 @@
 				D04C331F1B7EEA9F00727E60 /* Frameworks */,
 				D04C33201B7EEA9F00727E60 /* Resources */,
 				E66B71DBD343BAD67A015562 /* Copy Pods Resources */,
+				3AE1D6A4D198F4647B7F622A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +366,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3AE1D6A4D198F4647B7F622A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AF47875055F19E56CB66FEE2 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -420,9 +444,9 @@
 				D0C615381B8787E300240C7A /* SGKeyCodeTranslator.m in Sources */,
 				D0C10C1B1B7EEDD200C2DBE2 /* TKHSDeckImporter.m in Sources */,
 				D0C10C331B7F00F600C2DBE2 /* Deck.m in Sources */,
-				D01F955B1B8106F900AAD39C /* RLMArray+TKHelper.m in Sources */,
 				D01F95551B8080AE00AAD39C /* ImportFromWebVC.m in Sources */,
 				D0C10C411B7F46C800C2DBE2 /* TKKeyCodeHelper.m in Sources */,
+				D0ACA06B1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m in Sources */,
 				D0C615391B8787E300240C7A /* SGKeyCombo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,10 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Realm/Realm.h>
+#import <Mantle/Mantle.h>
 
-@interface Card : RLMObject
-@property NSString *name;
-@property NSInteger count;
+@interface Card : MTLModel
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) NSInteger count;
 @end
-RLM_ARRAY_TYPE(Card)  // define RLMArray<Card>

@@ -179,17 +179,21 @@ void WindowListApplierFunction(const void *inputDictionary, void *context)
     CGEventRef eventUp = CGEventCreateKeyboardEvent(NULL, keyCode, false);
     CGEventPost(kCGHIDEventTap, eventUp);
     CFRelease(eventUp);
-    NSLog(@"keyCode: %d", keyCode);
+    //NSLog(@"keyCode: %d", keyCode);
 }
+
+const useconds_t kStringTypingDelay = 0.01 * 1000000;
 
 - (void)postEventKeyboardTypeWithString:(NSString*)str {
 //    CGKeyCode keyCode = [TKKeyCodeHelper keyCodeFormChar:'h']; // 38
+    printf("typing key codes:");
     
     NSArray *arr = [TKKeyCodeHelper keyCodesFormString:str];
     for (NSNumber *keyCodeNum in arr) {
         CGKeyCode keyCode = [keyCodeNum unsignedShortValue];
+        printf(" %d", keyCode);
         [self postEventKeyboardTypeKeyCode:keyCode];
-        usleep(0.01 * 1000000);
+        usleep(kStringTypingDelay);
     }
 }
 
