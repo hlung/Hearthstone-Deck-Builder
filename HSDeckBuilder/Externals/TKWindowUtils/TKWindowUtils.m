@@ -195,6 +195,7 @@ const useconds_t kStringTypingDelay = 0.01 * 1000000;
         [self postEventKeyboardTypeKeyCode:keyCode];
         usleep(kStringTypingDelay);
     }
+    printf("\n");
 }
 
 @end
