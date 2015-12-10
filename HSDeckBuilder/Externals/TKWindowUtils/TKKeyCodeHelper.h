@@ -51,6 +51,8 @@ extern const CGKeyCode TK_CGKeyCode_UP;
 /**
  @return array of NSNumber of CGKeyCode, invalid string will be UINT16_MAX
  */
-+ (NSArray*)keyCodesFormString:(NSString *)string;
++ (NSArray *)keyCodesFormString:(NSString *)string;
+
++ (NSString *)stringFromKeyCodes:(NSArray *)keyCodes;
 
 @end

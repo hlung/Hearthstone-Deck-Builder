@@ -15,6 +15,7 @@
 		D04C33301B7EEA9F00727E60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04C332F1B7EEA9F00727E60 /* Images.xcassets */; };
 		D04C33331B7EEA9F00727E60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04C33311B7EEA9F00727E60 /* Main.storyboard */; };
 		D04C333F1B7EEA9F00727E60 /* HSDeckBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C333E1B7EEA9F00727E60 /* HSDeckBuilderTests.m */; };
+		D05507A41C19F126006806D3 /* TKKeyCodeHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D05507A31C19F126006806D3 /* TKKeyCodeHelperTests.m */; };
 		D0ACA06B1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA06A1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m */; };
 		D0C10C1B1B7EEDD200C2DBE2 /* TKHSDeckImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C1A1B7EEDD200C2DBE2 /* TKHSDeckImporter.m */; };
 		D0C10C301B7F00E500C2DBE2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C10C2F1B7F00E500C2DBE2 /* Card.m */; };
@@ -60,6 +61,7 @@
 		D04C33381B7EEA9F00727E60 /* HSDeckBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSDeckBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D04C333D1B7EEA9F00727E60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D04C333E1B7EEA9F00727E60 /* HSDeckBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSDeckBuilderTests.m; sourceTree = "<group>"; };
+		D05507A31C19F126006806D3 /* TKKeyCodeHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKKeyCodeHelperTests.m; sourceTree = "<group>"; };
 		D0ACA0691C0AEC190057A5D2 /* NSUserDefaults+NSCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+NSCoding.h"; sourceTree = "<group>"; };
 		D0ACA06A1C0AEC190057A5D2 /* NSUserDefaults+NSCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+NSCoding.m"; sourceTree = "<group>"; };
 		D0C10C191B7EEDD200C2DBE2 /* TKHSDeckImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKHSDeckImporter.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				D04C333E1B7EEA9F00727E60 /* HSDeckBuilderTests.m */,
+				D05507A31C19F126006806D3 /* TKKeyCodeHelperTests.m */,
 				D04C333C1B7EEA9F00727E60 /* Supporting Files */,
 			);
 			path = HSDeckBuilderTests;
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04C333F1B7EEA9F00727E60 /* HSDeckBuilderTests.m in Sources */,
+				D05507A41C19F126006806D3 /* TKKeyCodeHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

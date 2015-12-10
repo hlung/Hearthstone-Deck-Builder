@@ -10,6 +10,8 @@
 #import "TKKeyCodeHelper.h"
 #include <Carbon/Carbon.h> /* For kVK_ constants, and TIS functions. */
 
+// https://github.com/openstenoproject/plover/blob/master/plover/oslayer/osxkeyboardcontrol.py
+
 // TODO: list all non-printable keys
 const CGKeyCode TK_CGKeyCode_RETURN = 36;
 const CGKeyCode TK_CGKeyCode_TAB    = 48;
@@ -116,6 +118,7 @@ CGKeyCode keyCodeForChar(const char c)
     /* Our values may be NULL (0), so we need to use this function. */
     if (!CFDictionaryGetValueIfPresent(charToCodeDict, charStr,
                                        (const void **)&code)) {
+        printf("Cannot find char code for %c", c);
         code = UINT16_MAX;
     }
     
@@ -139,6 +142,15 @@ CGKeyCode keyCodeForChar(const char c)
             CGKeyCode keyCode = [self keyCodeFormChar:mychar[i]];
             [m addObject:@(keyCode)];
         }
+    }
+    return m;
+}
+
++ (NSString *)stringFromKeyCodes:(NSArray *)keyCodes {
+    NSMutableString *m = [NSMutableString string];
+    for (NSNumber *code in keyCodes) {
+        CFStringRef cstring = createStringForKey(code.unsignedIntValue);
+        [m appendFormat:@"%@", cstring];
     }
     return m;
 }

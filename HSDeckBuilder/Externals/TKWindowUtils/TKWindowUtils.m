@@ -173,12 +173,23 @@ void WindowListApplierFunction(const void *inputDictionary, void *context)
 }
 
 - (void)postEventKeyboardTypeKeyCode:(CGKeyCode)keyCode {
+    
+    CGEventRef modDown = CGEventCreateKeyboardEvent(NULL, 56, true);
+    CGEventPost(kCGHIDEventTap, modDown);
+    CFRelease(modDown);
+    
     CGEventRef eventDown = CGEventCreateKeyboardEvent(NULL, keyCode, true);
     CGEventPost(kCGHIDEventTap, eventDown);
     CFRelease(eventDown);
+    
     CGEventRef eventUp = CGEventCreateKeyboardEvent(NULL, keyCode, false);
     CGEventPost(kCGHIDEventTap, eventUp);
     CFRelease(eventUp);
+    
+    CGEventRef modUp = CGEventCreateKeyboardEvent(NULL, 56, false);
+    CGEventPost(kCGHIDEventTap, modUp);
+    CFRelease(modUp);
+    
     //NSLog(@"keyCode: %d", keyCode);
 }
 
