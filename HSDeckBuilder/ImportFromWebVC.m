@@ -39,6 +39,17 @@
 #endif
 }
 
+- (void)viewDidAppear {
+  [super viewDidAppear];
+  
+  // Auto paste url in clipboard if it is a supported url
+  NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+  NSString *string = [pasteboard  stringForType:NSPasteboardTypeString];
+  if ([TKHSDeckImporter isURLSupported:string]) {
+    self.urlTextField.stringValue = string;
+  }
+}
+
 - (IBAction)onImportBtn:(id)sender {
     
     NSString *urlString = self.urlTextField.stringValue;
