@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802E583F96FBB6998DC635A0 /* libPods-HSDeckBuilderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0318265819BC49866F22C73C /* libPods-HSDeckBuilderTests.a */; };
+		80D0D2A7A5C50F0C49DC8A72 /* libPods-HSDeckBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E60C568A705171E2838E68 /* libPods-HSDeckBuilder.a */; };
 		D01F95521B807D4700AAD39C /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F95511B807D4700AAD39C /* WindowController.m */; };
 		D01F95551B8080AE00AAD39C /* ImportFromWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D01F95541B8080AE00AAD39C /* ImportFromWebVC.m */; };
 		D04C33291B7EEA9F00727E60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D04C33281B7EEA9F00727E60 /* AppDelegate.m */; };
@@ -27,7 +29,6 @@
 		D0C615381B8787E300240C7A /* SGKeyCodeTranslator.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615321B8787E300240C7A /* SGKeyCodeTranslator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0C615391B8787E300240C7A /* SGKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C615341B8787E300240C7A /* SGKeyCombo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0C6153D1B8799C200240C7A /* ExportVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C6153B1B8799C200240C7A /* ExportVC.m */; };
-		D164A98F9F01747111AFEDB3 /* libPods-HSDeckBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		132F57034783940AFEE5C1CB /* Pods-HSDeckBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder.release.xcconfig"; sourceTree = "<group>"; };
-		2FC7E184BF00829B5AC6C0E9 /* Pods-HSDeckBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder.debug.xcconfig"; sourceTree = "<group>"; };
-		A8471F2E51C2A44BCB7AC841 /* libPods-HSDeckBuilderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0318265819BC49866F22C73C /* libPods-HSDeckBuilderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FDB6CB1DAD80FD2F9E5BFC5 /* Pods-HSDeckBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		B7E60C568A705171E2838E68 /* libPods-HSDeckBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49768CC10BF0A06CAC4BDE4 /* Pods-HSDeckBuilderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilderTests/Pods-HSDeckBuilderTests.release.xcconfig"; sourceTree = "<group>"; };
 		D01F95501B807D4700AAD39C /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		D01F95511B807D4700AAD39C /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		D01F95531B8080AE00AAD39C /* ImportFromWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportFromWebVC.h; sourceTree = "<group>"; };
@@ -83,7 +85,8 @@
 		D0C615341B8787E300240C7A /* SGKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGKeyCombo.m; sourceTree = "<group>"; };
 		D0C6153A1B8799C200240C7A /* ExportVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportVC.h; sourceTree = "<group>"; };
 		D0C6153B1B8799C200240C7A /* ExportVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportVC.m; sourceTree = "<group>"; };
-		DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HSDeckBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4900FBC6884E6D039AC0C7F /* Pods-HSDeckBuilderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilderTests/Pods-HSDeckBuilderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7F3A5B4C57C06214477E527 /* Pods-HSDeckBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HSDeckBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D164A98F9F01747111AFEDB3 /* libPods-HSDeckBuilder.a in Frameworks */,
+				80D0D2A7A5C50F0C49DC8A72 /* libPods-HSDeckBuilder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,26 +102,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				802E583F96FBB6998DC635A0 /* libPods-HSDeckBuilderTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5DF5FF3B9A8C10457BEC142F /* Frameworks */ = {
+		5473B1CB5E059C1C6BEC9218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF68502770159FE1B656FA29 /* libPods-HSDeckBuilder.a */,
-				A8471F2E51C2A44BCB7AC841 /* libPods-HSDeckBuilderTests.a */,
+				B7E60C568A705171E2838E68 /* libPods-HSDeckBuilder.a */,
+				0318265819BC49866F22C73C /* libPods-HSDeckBuilderTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7CE721F93BF8A038BA84819E /* Pods */ = {
+		BC87365C0F2292AC3A886842 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2FC7E184BF00829B5AC6C0E9 /* Pods-HSDeckBuilder.debug.xcconfig */,
-				132F57034783940AFEE5C1CB /* Pods-HSDeckBuilder.release.xcconfig */,
+				1FDB6CB1DAD80FD2F9E5BFC5 /* Pods-HSDeckBuilder.debug.xcconfig */,
+				F7F3A5B4C57C06214477E527 /* Pods-HSDeckBuilder.release.xcconfig */,
+				E4900FBC6884E6D039AC0C7F /* Pods-HSDeckBuilderTests.debug.xcconfig */,
+				C49768CC10BF0A06CAC4BDE4 /* Pods-HSDeckBuilderTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -138,8 +144,8 @@
 				D04C33241B7EEA9F00727E60 /* HSDeckBuilder */,
 				D04C333B1B7EEA9F00727E60 /* HSDeckBuilderTests */,
 				D04C33231B7EEA9F00727E60 /* Products */,
-				7CE721F93BF8A038BA84819E /* Pods */,
-				5DF5FF3B9A8C10457BEC142F /* Frameworks */,
+				BC87365C0F2292AC3A886842 /* Pods */,
+				5473B1CB5E059C1C6BEC9218 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +166,7 @@
 				D0C10C1C1B7EEE2100C2DBE2 /* Models */,
 				D0ACA06C1C0AF1560057A5D2 /* Controllers */,
 				D0231EDB1B7FB5770050BEF3 /* Categories */,
+				D0C10C181B7EEDD200C2DBE2 /* Importer */,
 				D0C10C171B7EEDD200C2DBE2 /* Externals */,
 				D04C332F1B7EEA9F00727E60 /* Images.xcassets */,
 				D04C33311B7EEA9F00727E60 /* Main.storyboard */,
@@ -213,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				D0C10C3B1B7F2FBE00C2DBE2 /* TKWindowUtils */,
-				D0C10C181B7EEDD200C2DBE2 /* Importer */,
 				D0C6152B1B8787E300240C7A /* SGHotKeysLib */,
 			);
 			path = Externals;
@@ -225,7 +231,8 @@
 				D0C10C191B7EEDD200C2DBE2 /* TKHSDeckImporter.h */,
 				D0C10C1A1B7EEDD200C2DBE2 /* TKHSDeckImporter.m */,
 			);
-			path = Importer;
+			name = Importer;
+			path = Externals/Importer;
 			sourceTree = "<group>";
 		};
 		D0C10C1C1B7EEE2100C2DBE2 /* Models */ = {
@@ -273,13 +280,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D04C33421B7EEA9F00727E60 /* Build configuration list for PBXNativeTarget "HSDeckBuilder" */;
 			buildPhases = (
-				AF47875055F19E56CB66FEE2 /* Check Pods Manifest.lock */,
+				F49382519BBCD20C820C4D48 /* [CP] Check Pods Manifest.lock */,
 				D01F955A1B80D33600AAD39C /* Auto increment build number */,
 				D04C331E1B7EEA9F00727E60 /* Sources */,
 				D04C331F1B7EEA9F00727E60 /* Frameworks */,
 				D04C33201B7EEA9F00727E60 /* Resources */,
-				E66B71DBD343BAD67A015562 /* Copy Pods Resources */,
-				3AE1D6A4D198F4647B7F622A /* Embed Pods Frameworks */,
+				023FCD42263A08B32249213C /* [CP] Embed Pods Frameworks */,
+				CBEE8E383BBE4EA97680840E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D04C33451B7EEA9F00727E60 /* Build configuration list for PBXNativeTarget "HSDeckBuilderTests" */;
 			buildPhases = (
+				25226456E3D555F25383FF65 /* [CP] Check Pods Manifest.lock */,
 				D04C33341B7EEA9F00727E60 /* Sources */,
 				D04C33351B7EEA9F00727E60 /* Frameworks */,
 				D04C33361B7EEA9F00727E60 /* Resources */,
+				060DA47E5F654BA501865D8F /* [CP] Embed Pods Frameworks */,
+				0F21591F15A327E57A999D5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,7 +324,7 @@
 		D04C331A1B7EEA9F00727E60 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Thongchai Kolyutsakul";
 				TargetAttributes = {
 					D04C33211B7EEA9F00727E60 = {
@@ -366,14 +376,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3AE1D6A4D198F4647B7F622A /* Embed Pods Frameworks */ = {
+		023FCD42263A08B32249213C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,19 +391,64 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF47875055F19E56CB66FEE2 /* Check Pods Manifest.lock */ = {
+		060DA47E5F654BA501865D8F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilderTests/Pods-HSDeckBuilderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F21591F15A327E57A999D5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilderTests/Pods-HSDeckBuilderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25226456E3D555F25383FF65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBEE8E383BBE4EA97680840E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D01F955A1B80D33600AAD39C /* Auto increment build number */ = {
@@ -410,19 +465,19 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"CONFIG $CONFIGURATION\"\nif [ \"$CONFIGURATION\" != \"Release\" ]; then\nexit 0\nfi\n\nBUILD_NUMBER=$(git rev-list HEAD --count)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILD_NUMBER\" \"$INFOPLIST_FILE\"\n\n# For debugging:\necho \"BUILD NUMBER: $BUILD_NUMBER\"";
 		};
-		E66B71DBD343BAD67A015562 /* Copy Pods Resources */ = {
+		F49382519BBCD20C820C4D48 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HSDeckBuilder/Pods-HSDeckBuilder-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -502,6 +557,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -562,20 +618,21 @@
 		};
 		D04C33431B7EEA9F00727E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FC7E184BF00829B5AC6C0E9 /* Pods-HSDeckBuilder.debug.xcconfig */;
+			baseConfigurationReference = 1FDB6CB1DAD80FD2F9E5BFC5 /* Pods-HSDeckBuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HSDeckBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "th.in.hlung.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HSDeckBuilder;
 			};
 			name = Debug;
 		};
 		D04C33441B7EEA9F00727E60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 132F57034783940AFEE5C1CB /* Pods-HSDeckBuilder.release.xcconfig */;
+			baseConfigurationReference = F7F3A5B4C57C06214477E527 /* Pods-HSDeckBuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -583,13 +640,14 @@
 				INFOPLIST_FILE = HSDeckBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "th.in.hlung.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HSDeckBuilder;
 			};
 			name = Release;
 		};
 		D04C33461B7EEA9F00727E60 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FC7E184BF00829B5AC6C0E9 /* Pods-HSDeckBuilder.debug.xcconfig */;
+			baseConfigurationReference = E4900FBC6884E6D039AC0C7F /* Pods-HSDeckBuilderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -603,6 +661,7 @@
 				);
 				INFOPLIST_FILE = HSDeckBuilderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "th.in.hlung.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HSDeckBuilderTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSDeckBuilder.app/Contents/MacOS/HSDeckBuilder";
 			};
@@ -610,7 +669,7 @@
 		};
 		D04C33471B7EEA9F00727E60 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 132F57034783940AFEE5C1CB /* Pods-HSDeckBuilder.release.xcconfig */;
+			baseConfigurationReference = C49768CC10BF0A06CAC4BDE4 /* Pods-HSDeckBuilderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -620,6 +679,7 @@
 				);
 				INFOPLIST_FILE = HSDeckBuilderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "th.in.hlung.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = HSDeckBuilderTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSDeckBuilder.app/Contents/MacOS/HSDeckBuilder";
 			};

@@ -109,9 +109,10 @@
                 }
                 // parse
                 NSString *cardName = [element text];
-                NSString *count = [[[content children] lastObject] content];
-                int cardCount = [[count firstMatch:RX(@"(\\d+)")] intValue]; // get first number
-                
+                int cardCount = [[element objectForKey:@"data-count"] intValue];
+                //NSString *count = [[[content children] lastObject] content];
+                //int cardCount = [[count firstMatch:RX(@"(\\d+)")] intValue]; // get first number
+              
                 // generate model
                 Card *card = [Card new];
                 card.name = cardName;
@@ -137,9 +138,7 @@
         if (fail) fail(@"URL not supported");
         return;
     }
-    
-//    NSString* query = [NSString stringWithFormat:@"http://www.hearthpwn.com/decks/%@", dockerId];
-    
+  
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     AFHTTPRequestOperation *loginRequest =
@@ -165,7 +164,7 @@
                  // parse
                  NSString *cardName = [cardNameElement text];
                  int cardCount = [[[content text] firstMatch:RX(@"(\\d+)")] intValue]; // get first number
-
+               
                  // generate model
                  Card *card = [Card new];
                  card.name = cardName;
