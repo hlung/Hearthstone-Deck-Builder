@@ -14,4 +14,8 @@
     _name = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
+- (void)setCount:(NSInteger)count {
+    _count = MAX(1, count); // safety, should never be less than 1
+}
+
 @end
