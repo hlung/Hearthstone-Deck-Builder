@@ -57,9 +57,11 @@
     
     // --- check game is running ---
     // Note: use `[[NSWorkspace sharedWorkspace] runningApplications]` to see app bundle IDs
-    NSString *hsAppBundleID = @"unity.Blizzard Entertainment.Hearthstone";
-    //    NSString *hsAppBundleID = @"com.apple.TextEdit";
-    //NSString *hsAppBundleID = @"com.sublimetext.2";
+    NSString *hsAppBundleID =
+    @"unity.Blizzard Entertainment.Hearthstone";
+//    @"com.gravity.roo.sea";
+//    @"com.apple.TextEdit";
+//    @"com.sublimetext.2";
     
     // try to bring Hearthstone window to front
     NSRunningApplication *hsApp = [[NSRunningApplication runningApplicationsWithBundleIdentifier:hsAppBundleID] firstObject];

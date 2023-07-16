@@ -29,12 +29,19 @@ DEPENDENCIES:
   - Mantle (~> 2.0.7)
   - RegExCategories (~> 1.0)
 
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - hpple
+    - Mantle
+    - RegExCategories
+
 SPEC CHECKSUMS:
-  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AFNetworking: 407b0a35966776613924a869ef358b59f927d788
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
 
 PODFILE CHECKSUM: 71464d2e6b268a7fa5a0d44725d9be2e26b4fa57
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.12.1

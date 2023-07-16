@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGRemoteOperation.h>
 
 extern const CGKeyCode TK_CGKeyCode_RETURN;
 extern const CGKeyCode TK_CGKeyCode_TAB;
